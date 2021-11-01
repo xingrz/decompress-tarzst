@@ -1,10 +1,10 @@
-import { readFile } from 'fs/promises';
+import { readFileSync } from 'fs';
 import { join } from 'path';
 import * as fileType from 'file-type';
 import decompressTarzst from '../src';
 
 test('extract file', async () => {
-  const buf = await readFile(join(__dirname, 'fixture.tar.zst'));
+  const buf = readFileSync(join(__dirname, 'fixture.tar.zst'));
   const files = await decompressTarzst()(buf);
   expect(files[0].path).toBe('test.jpg');
 
@@ -14,7 +14,7 @@ test('extract file', async () => {
 });
 
 test('return empty array if non-valid file is supplied', async () => {
-  const buf = await readFile(__filename);
+  const buf = readFileSync(__filename);
   const files = await decompressTarzst()(buf);
   expect(files.length).toBe(0);
 });

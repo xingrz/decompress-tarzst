@@ -4,7 +4,7 @@
   "description": "Decompress tar.zst plugin",
   "main": "lib/index.js",
   "engines": {
-    "node": ">=14"
+    "node": ">=10"
   },
   "scripts": {
     "build": "tsc -p .",
