@@ -1,0 +1,44 @@
+{
+  "name": "@xingrz/decompress-tarzst",
+  "version": "1.0.0",
+  "description": "Decompress tar.zst plugin",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "jest",
+    "prepublishOnly": "rm -rf lib && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xingrz/decompress-tarzst.git"
+  },
+  "keywords": [
+    "decompress",
+    "decompressplugin",
+    "extract",
+    "tar",
+    "tar.zst",
+    "tarzst",
+    "zst",
+    "zstd"
+  ],
+  "author": "XiNGRZ <hi@xingrz.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xingrz/decompress-tarzst/issues"
+  },
+  "homepage": "https://github.com/xingrz/decompress-tarzst#readme",
+  "dependencies": {
+    "decompress-tar": "^4.1.1",
+    "file-type": "^16.5.3",
+    "fzstd": "0.0.3"
+  },
+  "devDependencies": {
+    "@types/decompress": "^4.2.4",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
+  }
+}
