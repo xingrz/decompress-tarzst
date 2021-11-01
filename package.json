@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Decompress tar.zst plugin",
   "main": "lib/index.js",
+  "engines": {
+    "node": ">=14"
+  },
   "scripts": {
     "build": "tsc -p .",
     "test": "jest",

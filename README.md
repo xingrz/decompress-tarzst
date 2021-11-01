@@ -1,4 +1,4 @@
-# decompress-tarzst
+# decompress-tarzst  [![test](https://github.com/xingrz/decompress-tarzst/actions/workflows/test.yml/badge.svg)](https://github.com/xingrz/decompress-tarzst/actions/workflows/test.yml)
 
 > tar.zst decompress plugin
 
