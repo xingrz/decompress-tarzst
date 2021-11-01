@@ -1,6 +1,6 @@
 import { File } from 'decompress';
 import * as fileType from 'file-type';
-import * as fzstd from 'fzstd';
+import * as cppzst from '@fstnetwork/cppzst';
 import decompressTar from 'decompress-tar';
 
 export default () => async (input: Buffer): Promise<File[]> => {
@@ -13,6 +13,6 @@ export default () => async (input: Buffer): Promise<File[]> => {
     return [];
   }
 
-  const archive = Buffer.from(fzstd.decompress(input));
+  const archive = await cppzst.decompress(input);
   return decompressTar()(archive);
 };

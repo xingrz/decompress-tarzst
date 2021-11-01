@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/xingrz/decompress-tarzst#readme",
   "dependencies": {
+    "@fstnetwork/cppzst": "^2.0.8",
     "decompress-tar": "^4.1.1",
-    "file-type": "^16.5.3",
-    "fzstd": "0.0.3"
+    "file-type": "^16.5.3"
   },
   "devDependencies": {
     "@types/decompress": "^4.2.4",
