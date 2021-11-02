@@ -1,6 +1,6 @@
 import { File } from 'decompress';
 import * as fileType from 'file-type';
-import * as cppzst from '@fstnetwork/cppzst';
+import * as cppzst from '@xingrz/cppzst';
 import decompressTar from 'decompress-tar';
 
 export default () => async (input: Buffer): Promise<File[]> => {
