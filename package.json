@@ -34,7 +34,8 @@
   "dependencies": {
     "@xingrz/cppzst": "^2.1.0-alpha.8",
     "decompress-tar": "^4.1.1",
-    "file-type": "^16.5.3"
+    "file-type": "^16.5.3",
+    "is-stream": "^2.0.1"
   },
   "devDependencies": {
     "@types/decompress": "^4.2.4",

@@ -2,17 +2,29 @@ import { File } from 'decompress';
 import * as fileType from 'file-type';
 import * as cppzst from '@xingrz/cppzst';
 import decompressTar from 'decompress-tar';
+import { Readable } from 'stream';
+import isStream from 'is-stream';
 
-export default () => async (input: Buffer): Promise<File[]> => {
-  if (!Buffer.isBuffer(input)) {
-    throw new TypeError(`Expected a Buffer, got ${typeof input}`);
+export default () => async (input: Buffer | Readable): Promise<File[]> => {
+  const isBuffer = Buffer.isBuffer(input);
+  const type = isBuffer ? await fileType.fromBuffer(input) : null;
+
+  if (!isBuffer && !isStream(input)) {
+    throw new TypeError(`Expected a Buffer or Stream, got ${typeof input}`);
   }
 
-  const type = await fileType.fromBuffer(input);
-  if (!type || type.ext !== 'zst') {
+  if (isBuffer && (!type || type.ext !== 'zst')) {
     return [];
   }
 
-  const archive = await cppzst.decompress(input);
-  return decompressTar()(archive);
+  const decompressor = cppzst.decompressStream();
+  const result = decompressTar()(decompressor);
+
+  if (isBuffer) {
+    decompressor.end(input);
+  } else {
+    input.pipe(decompressor);
+  }
+
+  return result;
 };
