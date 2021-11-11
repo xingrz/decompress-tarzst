@@ -34,8 +34,8 @@
   "homepage": "https://github.com/xingrz/decompress-tarzst#readme",
   "dependencies": {
     "@xingrz/cppzst": "^2.1.0-alpha.8",
-    "@xingrz/decompress-tar": "^5.0.0-alpha.1",
-    "@xingrz/decompress-types": "^1.0.1",
+    "@xingrz/decompress-tar": "^5.1.0-alpha.0",
+    "@xingrz/decompress-types": "^1.1.0",
     "file-type": "^16.5.3",
     "is-stream": "^2.0.1"
   },

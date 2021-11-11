@@ -1,10 +1,10 @@
-import type { DecompressPlugin } from '@xingrz/decompress-types';
+import type { DecompressPlugin, DecompressPluginOptions } from '@xingrz/decompress-types';
 import * as fileType from 'file-type';
 import * as cppzst from '@xingrz/cppzst';
 import decompressTar from '@xingrz/decompress-tar';
 import isStream from 'is-stream';
 
-export default (): DecompressPlugin<void> => async (input) => {
+export default (): DecompressPlugin<DecompressPluginOptions> => async (input, opts) => {
   const isBuffer = Buffer.isBuffer(input);
   const type = isBuffer ? await fileType.fromBuffer(input) : null;
 
@@ -17,7 +17,7 @@ export default (): DecompressPlugin<void> => async (input) => {
   }
 
   const decompressor = cppzst.decompressStream();
-  const result = decompressTar()(decompressor);
+  const result = decompressTar()(decompressor, opts);
 
   if (isBuffer) {
     decompressor.end(input);
