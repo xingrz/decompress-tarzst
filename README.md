@@ -1,20 +1,21 @@
-# decompress-tarzst  [![test](https://github.com/xingrz/decompress-tarzst/actions/workflows/test.yml/badge.svg)](https://github.com/xingrz/decompress-tarzst/actions/workflows/test.yml)
+@xingrz/decompress-tarzst [![test](https://github.com/xingrz/decompress-tarzst/actions/workflows/test.yml/badge.svg)](https://github.com/xingrz/decompress-tarzst/actions/workflows/test.yml)
+==========
 
-> tar.zst decompress plugin
+[![][npm-version]][npm-url] [![][npm-downloads]][npm-url] [![license][license-img]][license-url] [![issues][issues-img]][issues-url] [![stars][stars-img]][stars-url] [![commits][commits-img]][commits-url]
 
+[@xingrz/decompress](https://github.com/xingrz/decompress) .tar.zst plugin.
 
 ## Install
 
 ```
-$ npm install @xingrz/decompress-tarzst
+$ npm install --save @xingrz/decompress-tarzst
 ```
-
 
 ## Usage
 
-```js
-const decompress = require('decompress');
-const decompressTarzst = require('@xingrz/decompress-tarzst');
+```ts
+import decompress from '@xingrz/decompress';
+import decompressTarzst from '@xingrz/decompress-tarzst';
 
 (async () => {
 	await decompress('unicorn.tar.zst', 'dist', {
@@ -27,15 +28,30 @@ const decompressTarzst = require('@xingrz/decompress-tarzst');
 })();
 ```
 
-
 ## API
 
-### decompressTarzst()(input)
+### `decompressTarzst(): (input: Buffer | Readable) => Promise<File[]>`
 
-Returns both a `Promise<Buffer>` and a [Duplex stream](https://nodejs.org/api/stream.html#stream_class_stream_duplex).
+Returns a `Promise<File[]>`.
 
 #### input
 
-Type: `Buffer`
+Type: `Buffer` or [`stream.Readable`](https://nodejs.org/dist/latest-v16.x/docs/api/stream.html#class-streamreadable)
 
-Buffer to decompress.
+Buffer or stream to decompress.
+
+## License
+
+[MIT License](LICENSE)
+
+[npm-version]: https://img.shields.io/npm/v/@xingrz/decompress-tarzst.svg?style=flat-square
+[npm-downloads]: https://img.shields.io/npm/dm/@xingrz/decompress-tarzst.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/@xingrz/decompress-tarzst
+[license-img]: https://img.shields.io/github/license/xingrz/decompress-tarzst?style=flat-square
+[license-url]: LICENSE
+[issues-img]: https://img.shields.io/github/issues/xingrz/decompress-tarzst?style=flat-square
+[issues-url]: https://github.com/xingrz/decompress-tarzst/issues
+[stars-img]: https://img.shields.io/github/stars/xingrz/decompress-tarzst?style=flat-square
+[stars-url]: https://github.com/xingrz/decompress-tarzst/stargazers
+[commits-img]: https://img.shields.io/github/last-commit/xingrz/decompress-tarzst?style=flat-square
+[commits-url]: https://github.com/xingrz/decompress-tarzst/commits/master
