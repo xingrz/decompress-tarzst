@@ -1,6 +1,6 @@
 {
   "name": "@xingrz/decompress-tarzst",
-  "version": "1.4.0",
+  "version": "5.1.0-alpha.0",
   "description": "Decompress tar.zst plugin",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
