@@ -8,3 +8,5 @@ node_modules
 
 jest.config.js
 /test
+
+tsconfig.json

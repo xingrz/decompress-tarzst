@@ -7,8 +7,8 @@
 
 ## Install
 
-```
-$ npm install --save @xingrz/decompress-tarzst
+```sh
+npm install --save @xingrz/decompress-tarzst
 ```
 
 ## Usage
