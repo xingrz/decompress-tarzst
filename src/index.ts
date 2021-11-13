@@ -22,6 +22,7 @@ export default (): DecompressPlugin<DecompressPluginOptions> => async (input, op
   if (isBuffer) {
     decompressor.end(input);
   } else {
+    input.once('error', e => decompressor.emit('error', e));
     input.pipe(decompressor);
   }
 
